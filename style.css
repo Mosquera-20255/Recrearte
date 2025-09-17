@@ -31,6 +31,7 @@ body {
     padding: 1rem;
 }
 
+/* 👇 BANNER AHORA CON PROPIEDADES RESPONSIVE 👇 */
 .banner-content {
     background-color: var(--color-contenedor);
     padding: 2rem 3rem;
@@ -38,6 +39,8 @@ body {
     border: 1px solid var(--color-acento-amarillo);
     box-shadow: 0 0 25px rgba(255, 214, 0, 0.3);
     max-width: 500px;
+    width: 90%; /* Asegura que no toque los bordes en móvil */
+    box-sizing: border-box; /* Incluye padding y borde en el cálculo del ancho */
 }
 
     .banner-content h1 {
@@ -358,13 +361,13 @@ body {
         border-color: var(--color-acento-amarillo);
     }
 
-/* --- ESTILOS PARA EL POPUP DE EVENTOS (MODIFICADO) --- */
+/* --- ESTILOS PARA EL POPUP DE EVENTOS --- */
 .event-popup-content {
     max-height: 200px;
-    overflow-y: auto; /* Mantiene el scroll vertical para listas largas */
-    overflow-x: hidden; /* Oculta el scroll horizontal no deseado */
+    overflow-y: auto;
+    overflow-x: hidden;
     font-size: 0.9rem;
-    scrollbar-width: thin; /* Estilo de scrollbar para Firefox */
+    scrollbar-width: thin;
     scrollbar-color: var(--color-acento-amarillo) var(--color-fondo-oscuro);
 }
 
@@ -425,18 +428,18 @@ body {
     }
 
 
-/* --- ESTILOS DE LEAFLET Y RESPONSIVE (MODIFICADO) --- */
+/* --- ESTILOS DE LEAFLET Y RESPONSIVE --- */
 .leaflet-popup-content-wrapper {
     background-color: var(--color-contenedor);
     color: var(--color-texto-claro);
     border-radius: 8px;
     border: 1px solid var(--color-acento-amarillo);
-    max-width: 320px; /* Ancho máximo para el popup en escritorio */
+    max-width: 320px;
 }
 
 .leaflet-popup-content {
     margin: 15px;
-    width: auto !important; /* Permite que el contenido se ajuste */
+    width: auto !important;
 }
 
 .leaflet-popup-tip {
@@ -535,14 +538,12 @@ body {
     }
 }
 
-/* 👇 NUEVO MEDIA QUERY PARA POPUPS EN MÓVILES MUY PEQUEÑOS 👇 */
 @media (max-width: 400px) {
     .leaflet-popup-content-wrapper {
-        /* Usa el 90% del ancho de la pantalla menos un pequeño margen */
         width: calc(90vw - 30px);
     }
 
     .leaflet-popup-content {
-        margin: 10px; /* Reduce el margen interno */
+        margin: 10px;
     }
 }

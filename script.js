@@ -90,9 +90,9 @@ document.addEventListener('DOMContentLoaded', function () {
         mainContainer.style.display = 'block';
 
         mapInstance = L.map('mapa').setView(coords, 14);
-
-        const lightLayer = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-            attribution: '&copy; OpenStreetMap contributors'
+        
+        const lightLayer = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { 
+            attribution: '&copy; OpenStreetMap contributors' 
         }).addTo(mapInstance);
         const darkLayer = L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
             attribution: '&copy; OpenStreetMap contributors &copy; CARTO'
@@ -109,7 +109,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 this.textContent = 'Cambiar a Mapa Oscuro';
             }
         });
-
+        
         visibleMarkers.addTo(mapInstance);
 
         generarTarjetasDeFecha();
@@ -121,7 +121,7 @@ document.addEventListener('DOMContentLoaded', function () {
             L.marker(coords, { icon: userIcon }).addTo(mapInstance)
                 .bindTooltip('Estás aquí', { permanent: true, direction: 'top', offset: [0, -15], className: 'permanent-label' }).openTooltip();
         }
-
+        
         document.querySelector('.date-card').click();
     }
 
@@ -145,11 +145,11 @@ document.addEventListener('DOMContentLoaded', function () {
             });
         });
     }
-
+    
     function generarTarjetasDeFecha() {
         const startDate = new Date('2025-09-26T00:00:00-05:00');
         const endDate = new Date('2025-10-05T00:00:00-05:00');
-
+        
         for (let d = new Date(startDate); d <= endDate; d.setDate(d.getDate() + 1)) {
             const dateString = d.toISOString().split('T')[0];
             const card = document.createElement('div');
@@ -161,7 +161,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 <p class="date-day">${d.toLocaleString('es-ES', { weekday: 'short', day: 'numeric' })}</p>
                 <p class="date-full">${d.toLocaleString('es-ES', { month: 'short' })}</p>
             `;
-
+            
             card.addEventListener('click', () => {
                 document.querySelectorAll('.date-card').forEach(c => c.classList.remove('selected'));
                 card.classList.add('selected');
@@ -176,12 +176,12 @@ document.addEventListener('DOMContentLoaded', function () {
         if (!selectedDate) return;
 
         visibleMarkers.clearLayers();
-
+        
         let eventosDelDia = eventsData.filter(event => event.date === selectedDate);
-
+        
         let eventosFiltradosPorHora = eventosDelDia.filter(event => {
             if (selectedTimeFilter === 'all') return true;
-
+            
             const [startHour, endHour] = parseTime(event.time);
             if (startHour === null) return true;
 
@@ -197,23 +197,23 @@ document.addEventListener('DOMContentLoaded', function () {
         const eventosAgrupados = agruparEventos(eventosFiltradosPorHora);
         mostrarMarcadores(eventosAgrupados);
     }
-
+    
     function parseTime(timeString) {
         try {
             const cleanTime = timeString.replace(/\./g, '').toLowerCase();
             const parts = cleanTime.split(' a ');
-
+            
             let startHour = parseInt(parts[0].split(':')[0]);
             let endHour = parseInt(parts[1].split(':')[0]);
 
             if (parts[0].includes('p.m.') && startHour !== 12) startHour += 12;
             if (parts[0].includes('m.') && startHour == 12) startHour = 12;
             if (parts[0].includes('a.m.') && startHour === 12) startHour = 0;
-
+            
             if (parts[1].includes('p.m.') && endHour !== 12) endHour += 12;
             if (parts[1].includes('a.m.') && endHour === 12) endHour = 24;
             if (parts[1].includes('m.') && endHour == 12) endHour = 12;
-
+            
             return [startHour, endHour];
         } catch (e) {
             return [null, null];
@@ -246,21 +246,22 @@ document.addEventListener('DOMContentLoaded', function () {
             });
             const marker = L.marker([group.lat, group.lng], { icon: icon });
 
-            // --- 👇 LÍNEAS MODIFICADAS ---
             const cronogramaUrl = 'https://web.facebook.com/share/p/1A22k4xkwH/';
             let popupContent = `<div class="event-popup-content"><h3>${group.location}</h3>`;
             group.events.forEach(event => {
                 popupContent += `<p><strong>${event.name}</strong><br><span>${event.time}</span></p>`;
             });
-            // Añade el botón al final del contenido
             popupContent += `<a href="${cronogramaUrl}" target="_blank" class="cronograma-btn">Ver cronograma completo</a></div>`;
-            // --- FIN DE LAS LÍNEAS MODIFICADAS ---
-
+            
             marker.bindPopup(popupContent);
 
-            let tooltipContent = (group.events.length > 1) ? "Varios eventos: Clic para ver" : group.events[0].name;
+            // --- 👇 LÍNEA MODIFICADA ---
+            // El tooltip ahora siempre muestra el nombre del lugar.
+            let tooltipContent = group.location;
+            // --- FIN DE LA LÍNEA MODIFICADA ---
+            
             marker.bindTooltip(tooltipContent, { permanent: true, direction: 'top', offset: [0, -70], className: 'permanent-label' });
-
+            
             visibleMarkers.addLayer(marker);
         });
     }
