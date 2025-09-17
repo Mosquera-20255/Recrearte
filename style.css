@@ -15,7 +15,7 @@ body {
     overflow: hidden;
 }
 
-/* --- ESTILOS DEL BANNER DE BIENVENIDA --- */
+/* --- ESTILOS DEL BANNER DE BIENVENIDA (CORREGIDO) --- */
 #welcome-banner {
     position: fixed;
     top: 0;
@@ -24,14 +24,13 @@ body {
     height: 100%;
     background-color: rgba(0, 0, 0, 0.8);
     z-index: 10001;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
+    display: flex; /* Habilita Flexbox */
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center; /* Centra verticalmente */
     padding: 1rem;
+    box-sizing: border-box; /* Asegura que el padding no afecte las dimensiones */
 }
 
-/* 👇 BANNER AHORA CON PROPIEDADES RESPONSIVE 👇 */
 .banner-content {
     background-color: var(--color-contenedor);
     padding: 2rem 3rem;
@@ -39,8 +38,9 @@ body {
     border: 1px solid var(--color-acento-amarillo);
     box-shadow: 0 0 25px rgba(255, 214, 0, 0.3);
     max-width: 500px;
-    width: 90%; /* Asegura que no toque los bordes en móvil */
-    box-sizing: border-box; /* Incluye padding y borde en el cálculo del ancho */
+    width: 90%;
+    box-sizing: border-box;
+    text-align: center;
 }
 
     .banner-content h1 {
