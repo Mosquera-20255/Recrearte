@@ -15,7 +15,28 @@ body {
     overflow: hidden;
 }
 
-/* --- ESTILOS DEL BANNER DE BIENVENIDA (CORREGIDO) --- */
+/* --- ANIMACIONES --- */
+@keyframes border-chase {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes pulse-shadow {
+    0% {
+        box-shadow: 0 0 15px rgba(255, 214, 0, 0.4);
+    }
+
+    50% {
+        box-shadow: 0 0 30px rgba(255, 214, 0, 0.8);
+    }
+
+    100% {
+        box-shadow: 0 0 15px rgba(255, 214, 0, 0.4);
+    }
+}
+
+/* --- ESTILOS DEL BANNER DE BIENVENIDA --- */
 #welcome-banner {
     position: fixed;
     top: 0;
@@ -24,24 +45,51 @@ body {
     height: 100%;
     background-color: rgba(0, 0, 0, 0.8);
     z-index: 10001;
-    display: flex; /* Habilita Flexbox */
-    justify-content: center; /* Centra horizontalmente */
-    align-items: center; /* Centra verticalmente */
+    display: flex;
+    justify-content: center;
+    align-items: center;
     padding: 1rem;
-    box-sizing: border-box; /* Asegura que el padding no afecte las dimensiones */
+    box-sizing: border-box;
 }
 
 .banner-content {
     background-color: var(--color-contenedor);
     padding: 2rem 3rem;
     border-radius: 12px;
-    border: 1px solid var(--color-acento-amarillo);
-    box-shadow: 0 0 25px rgba(255, 214, 0, 0.3);
     max-width: 500px;
     width: 90%;
     box-sizing: border-box;
     text-align: center;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    border: none; /* Se quita el borde estático para dar paso a la animación */
 }
+
+    .banner-content::before {
+        content: '';
+        position: absolute;
+        z-index: -2;
+        inset: -50%;
+        background: conic-gradient(var(--color-acento-amarillo), transparent 30%, transparent);
+        animation: border-chase 6s linear infinite;
+    }
+
+    .banner-content::after {
+        content: '';
+        position: absolute;
+        z-index: -1;
+        inset: 4px;
+        background: var(--color-contenedor);
+        border-radius: 8px;
+    }
+
+    .banner-content h1,
+    .banner-content p,
+    .banner-content button {
+        position: relative;
+        z-index: 2;
+    }
 
     .banner-content h1 {
         color: var(--color-acento-amarillo);
@@ -88,18 +136,30 @@ body {
     height: 100%;
     background-color: #000;
     z-index: 9999;
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }
 
+/* Se usa posicionamiento absoluto para un centrado perfecto del video de inicio */
 #intro-video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     width: 75%;
     height: auto;
     max-width: 1400px;
     border-radius: 12px;
-    border: 1px solid var(--color-acento-amarillo);
-    box-shadow: 0 0 20px rgba(255, 214, 0, 0.4);
+    border: 2px solid var(--color-acento-amarillo);
+    animation: pulse-shadow 3s ease-in-out infinite;
+}
+
+#header-video {
+    display: block;
+    height: 120px;
+    width: auto;
+    margin: 0 auto 1.5rem auto;
+    border-radius: 8px;
+    border: 2px solid var(--color-acento-amarillo);
+    animation: pulse-shadow 3s ease-in-out infinite;
 }
 
 #skip-video-btn {
@@ -127,15 +187,6 @@ body {
 .main-container {
     padding: 2rem 1rem;
     background-color: var(--color-contenedor);
-}
-
-#header-video {
-    display: block;
-    height: 120px;
-    width: auto;
-    margin: 0 auto 1.5rem auto;
-    border-radius: 8px;
-    border: 1px solid var(--color-acento-amarillo);
 }
 
 .map-controls {
@@ -179,6 +230,7 @@ body {
     border-radius: 8px;
     background-color: #333;
     overflow: hidden;
+    margin: 0 auto;
 }
 
     #mapa .leaflet-container {
@@ -227,6 +279,8 @@ body {
     border: 3px solid #fff;
     border-radius: 50%;
     box-shadow: 0 0 10px #000;
+    position: relative;
+    animation: jump 1.5s infinite;
 }
 
 /* --- ESTILOS PARA EL FILTRO DE FECHAS Y BOTONES --- */
@@ -234,6 +288,7 @@ body {
     position: relative;
     display: flex;
     align-items: center;
+    width: 100%;
     max-width: 900px;
     margin: 0 auto 1.5rem auto;
 }
@@ -295,10 +350,10 @@ body {
     text-align: center;
     cursor: pointer;
     transition: all 0.3s ease;
+    box-sizing: border-box;
 }
 
     .date-card:hover {
-        border-color: var(--color-acento-amarillo);
         transform: translateY(-5px);
     }
 
@@ -307,6 +362,44 @@ body {
         background-color: #68249D;
         box-shadow: 0 0 15px rgba(255, 214, 0, 0.3);
     }
+
+    /* Animación de borde giratorio para las tarjetas de navegación */
+    .date-card.nav-card {
+        position: relative;
+        overflow: hidden;
+        border: none;
+        font-weight: bold;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        z-index: 1;
+        border-radius: 8px;
+    }
+
+        .date-card.nav-card::before {
+            content: '';
+            position: absolute;
+            z-index: -1;
+            inset: -25%;
+            background: conic-gradient( var(--color-acento-amarillo), transparent 30%, transparent );
+            animation: border-chase 2.5s linear infinite;
+        }
+
+        .date-card.nav-card::after {
+            content: '';
+            position: absolute;
+            z-index: -1;
+            inset: 2px;
+            background: var(--color-contenedor);
+            border-radius: 7px;
+        }
+
+        .date-card.nav-card img,
+        .date-card.nav-card .date-day {
+            position: relative;
+            z-index: 2;
+        }
 
     .date-card img {
         width: 50px;
@@ -517,12 +610,12 @@ body {
         width: 95%;
     }
 
-    .main-container {
-        padding: 1rem;
-    }
-
     #header-video {
         height: 100px;
+    }
+
+    .main-container {
+        padding: 1rem;
     }
 
     #skip-video-btn {

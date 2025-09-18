@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
     <link rel="stylesheet" href="https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/leaflet.fullscreen.css" />
 
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css?v=1">
 </head>
 <body>
 
@@ -29,11 +29,15 @@
 
     <div id="loader-container">
         <button id="skip-video-btn">X</button>
-        <video id="intro-video" src="inicio1.mp4" autoplay muted playsinline></video>
+        <div class="intro-video-wrapper">
+            <video id="intro-video" src="inicio1.mp4" autoplay muted playsinline></video>
+        </div>
     </div>
 
     <div class="main-container" style="display: none;">
-        <video id="header-video" src="logo1.mp4" autoplay loop muted playsinline></video>
+        <div class="header-video-wrapper">
+            <video id="header-video" src="logo1.mp4" autoplay loop muted playsinline></video>
+        </div>
 
         <div class="map-controls">
             <button id="theme-toggle-btn">Cambiar a Mapa Oscuro</button>
