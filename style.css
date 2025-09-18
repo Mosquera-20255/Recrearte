@@ -15,7 +15,7 @@ body {
     overflow: hidden;
 }
 
-/* --- ESTILOS DEL BANNER DE BIENVENIDA (CORREGIDO) --- */
+/* --- ESTILOS DEL BANNER DE BIENVENIDA --- */
 #welcome-banner {
     position: fixed;
     top: 0;
@@ -24,11 +24,11 @@ body {
     height: 100%;
     background-color: rgba(0, 0, 0, 0.8);
     z-index: 10001;
-    display: flex; /* Habilita Flexbox */
-    justify-content: center; /* Centra horizontalmente */
-    align-items: center; /* Centra verticalmente */
+    display: flex;
+    justify-content: center;
+    align-items: center;
     padding: 1rem;
-    box-sizing: border-box; /* Asegura que el padding no afecte las dimensiones */
+    box-sizing: border-box;
 }
 
 .banner-content {
@@ -308,27 +308,36 @@ body {
         box-shadow: 0 0 15px rgba(255, 214, 0, 0.3);
     }
 
-    .date-card img {
-        width: 50px;
-        height: 50px;
-        object-fit: cover;
-        border-radius: 50%;
-        margin-bottom: 8px;
-        border: 1px solid var(--color-acento-amarillo);
-    }
+/* 👇 NUEVA CLASE PARA TARJETAS DE NAVEGACIÓN 👇 */
+.nav-card {
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    font-weight: bold;
+    border-style: dashed;
+}
 
-    .date-card .date-day {
-        font-size: 0.9rem;
-        font-weight: bold;
-        color: var(--color-texto-claro);
-        margin: 0;
-    }
+.date-card img {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-bottom: 8px;
+    border: 1px solid var(--color-acento-amarillo);
+}
 
-    .date-card .date-full {
-        font-size: 0.8rem;
-        color: #ccc;
-        margin: 0;
-    }
+.date-card .date-day {
+    font-size: 0.9rem;
+    font-weight: bold;
+    color: var(--color-texto-claro);
+    margin: 0;
+}
+
+.date-card .date-full {
+    font-size: 0.8rem;
+    color: #ccc;
+    margin: 0;
+}
 
 /* --- ESTILOS PARA EL FILTRO DE HORA --- */
 .time-filter-controls {
