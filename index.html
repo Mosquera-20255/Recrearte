@@ -4,17 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Prueba Recrearte</title>
-    <link rel="icon" type="image/x-icon" href="recre.ico">
+    <link rel="icon" type="image/x-icon" href="media/recre.ico">
 
-    <link rel="preload" as="video" href="inicio1.mp4">
-    <link rel="preload" as="video" href="logo1.mp4">
-    <link rel="preload" as="image" href="marcador.jpg">
+    <link rel="preload" as="video" href="media/inicio1.mp4">
+    <link rel="preload" as="video" href="media/logo1.mp4">
+    <link rel="preload" as="image" href="media/marcador.jpg">
     <link rel="preload" as="script" href="script.js">
 
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
     <link rel="stylesheet" href="https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/leaflet.fullscreen.css" />
 
-    <link rel="stylesheet" href="style.css?v=1">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
@@ -29,15 +29,11 @@
 
     <div id="loader-container">
         <button id="skip-video-btn">X</button>
-        <div class="intro-video-wrapper">
-            <video id="intro-video" src="inicio1.mp4" autoplay muted playsinline></video>
-        </div>
+        <video id="intro-video" src="media/inicio1.mp4" autoplay muted playsinline></video>
     </div>
 
     <div class="main-container" style="display: none;">
-        <div class="header-video-wrapper">
-            <video id="header-video" src="logo1.mp4" autoplay loop muted playsinline></video>
-        </div>
+        <video id="header-video" src="media/logo1.mp4" autoplay loop muted playsinline></video>
 
         <div class="map-controls">
             <button id="theme-toggle-btn">Cambiar a Mapa Oscuro</button>
@@ -60,6 +56,15 @@
             <button class="time-filter-btn active" data-filter="all">Todo el día</button>
             <button class="time-filter-btn" data-filter="am">Antes de 12 p.m.</button>
             <button class="time-filter-btn" data-filter="pm">Después de 12 p.m.</button>
+        </div>
+
+        <div class="category-filter-controls">
+            <button class="category-filter-btn active" data-filter="all">Todos</button>
+            <button class="category-filter-btn" data-filter="arte">Arte y Cultura</button>
+            <button class="category-filter-btn" data-filter="deporte">Deporte</button>
+        </div>
+
+        <div class="pre-map-image-container">
         </div>
 
         <div id="mapa"></div>
