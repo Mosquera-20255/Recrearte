@@ -34,33 +34,33 @@ document.addEventListener('DOMContentLoaded', function () {
 
     const eventsData = [
         // Viernes 26 de Septiembre
-        { lat: 4.71003, lng: -74.22675, location: 'Parque Principal', name: 'Feria Emotion', time: '7:00 a.m. a 5:00 p.m.', date: '2025-09-26', category: 'arte', img: 'media/marcador.jpg' },
-        { lat: 4.71003, lng: -74.22675, location: 'Parque Principal', name: 'EXPOARTE', time: '8:00 a.m. a 8:00 p.m.', date: '2025-09-26', category: 'arte', img: 'media/marcador.jpg' },
-        { lat: 4.71003, lng: -74.22675, location: 'Parque Principal', name: 'Feria Gastronómica', time: '5:00 p.m. a 12:00 a.m.', date: '2025-09-26', category: 'arte', img: 'media/marcador.jpg' },
-        { lat: 4.71003, lng: -74.22675, location: 'Parque Principal', name: 'CONCIERTO INAUGURAL', time: '5:00 p.m. a 12:00 a.m.', date: '2025-09-26', category: 'arte', img: 'media/marcador.jpg' },
-        { lat: 4.7106, lng: -74.2319, location: 'Sector El Remanso', name: 'Jornada de embellecimiento ambiental', time: '8:00 a.m. a 12:00 m.', date: '2025-09-26', category: 'arte', img: 'media/marcador.jpg' },
-        { lat: 4.71032, lng: -74.21855, location: 'I.E. La Armonía', name: 'Exposición Vigías del Patrimonio', time: '9:00 a.m. a 10:00 a.m.', date: '2025-09-26', category: 'arte', img: 'media/marcador.jpg' },
-        { lat: 4.7103, lng: -74.2269, location: 'Salón de alcaldes', name: 'Taller "Masti Mastodonte"', time: '9:00 a.m. a 11:00 a.m.', date: '2025-09-26', category: 'arte', img: 'media/marcador.jpg' },
-        { lat: 4.70371, lng: -74.23117, location: 'Coliseo Lucio Amórtegui', name: 'YOGA FEST', time: '6:00 p.m. a 8:00 p.m.', date: '2025-09-26', category: 'arte', img: 'media/marcador.jpg' },
-        { lat: 4.7011, lng: -74.2334, location: 'La Esperanza - Villa Nueva', name: 'Torneo nocturno fútbol de salón', time: '5:00 p.m. a 9:00 p.m.', date: '2025-09-26', category: 'deporte', img: 'media/marcador.jpg' },
+        { lat: 4.71003, lng: -74.22675, location: 'Parque Principal', name: 'Feria Emotion', time: '7:00 a.m. a 5:00 p.m.', date: '2025-09-26', category: 'arte', img: 'img/marcador.jpg' },
+        { lat: 4.71003, lng: -74.22675, location: 'Parque Principal', name: 'EXPOARTE', time: '8:00 a.m. a 8:00 p.m.', date: '2025-09-26', category: 'arte', img: 'img/marcador.jpg' },
+        { lat: 4.71003, lng: -74.22675, location: 'Parque Principal', name: 'Feria Gastronómica', time: '5:00 p.m. a 12:00 a.m.', date: '2025-09-26', category: 'arte', img: 'img/marcador.jpg' },
+        { lat: 4.71003, lng: -74.22675, location: 'Parque Principal', name: 'CONCIERTO INAUGURAL', time: '5:00 p.m. a 12:00 a.m.', date: '2025-09-26', category: 'arte', img: 'img/marcador.jpg' },
+        { lat: 4.7106, lng: -74.2319, location: 'Sector El Remanso', name: 'Jornada de embellecimiento ambiental', time: '8:00 a.m. a 12:00 m.', date: '2025-09-26', category: 'arte', img: 'img/marcador.jpg' },
+        { lat: 4.71032, lng: -74.21855, location: 'I.E. La Armonía', name: 'Exposición Vigías del Patrimonio', time: '9:00 a.m. a 10:00 a.m.', date: '2025-09-26', category: 'arte', img: 'img/marcador.jpg' },
+        { lat: 4.7103, lng: -74.2269, location: 'Salón de alcaldes', name: 'Taller "Masti Mastodonte"', time: '9:00 a.m. a 11:00 a.m.', date: '2025-09-26', category: 'arte', img: 'img/marcador.jpg' },
+        { lat: 4.70371, lng: -74.23117, location: 'Coliseo Lucio Amórtegui', name: 'YOGA FEST', time: '6:00 p.m. a 8:00 p.m.', date: '2025-09-26', category: 'arte', img: 'img/marcador.jpg' },
+        { lat: 4.7011, lng: -74.2334, location: 'La Esperanza - Villa Nueva', name: 'Torneo nocturno fútbol de salón', time: '5:00 p.m. a 9:00 p.m.', date: '2025-09-26', category: 'deporte', img: 'img/marcador.jpg' },
 
         // Sábado 27 de Septiembre
-        { lat: 4.71003, lng: -74.22675, location: 'Parque Principal', name: 'Feria Emotion', time: '7:00 a.m. a 5:00 p.m.', date: '2025-09-27', category: 'arte', img: 'media/marcador.jpg' },
-        { lat: 4.71003, lng: -74.22675, location: 'Parque Principal', name: 'CUMPLEAÑOS MOSQUERA', time: '8:00 a.m. a 11:00 a.m.', date: '2025-09-27', category: 'arte', img: 'media/marcador.jpg' },
-        { lat: 4.71003, lng: -74.22675, location: 'Parque Principal', name: 'Zona Beautiful', time: '3:00 p.m. a 6:00 p.m.', date: '2025-09-27', category: 'arte', img: 'media/marcador.jpg' },
-        { lat: 4.71003, lng: -74.22675, location: 'Parque Principal', name: 'CONCIERTO GOSPEL', time: '4:00 p.m. a 12:00 a.m.', date: '2025-09-27', category: 'arte', img: 'media/marcador.jpg' },
-        { lat: 4.7042, lng: -74.2315, location: 'Patinódromo', name: 'Feria de emprendimientos deportivos', time: '7:00 a.m. a 7:00 p.m.', date: '2025-09-27', category: 'arte', img: 'media/marcador.jpg' },
-        { lat: 4.711, lng: -74.228, location: 'Teatro Municipal', name: 'II encuentro de vigías del patrimonio', time: '8:00 a.m. a 5:00 p.m.', date: '2025-09-27', category: 'arte', img: 'media/marcador.jpg' },
-        { lat: 4.721, lng: -74.23, location: 'Los Puentes', name: 'Jornada de siembra', time: '9:00 a.m. a 11:00 a.m.', date: '2025-09-27', category: 'arte', img: 'media/marcador.jpg' },
-        { lat: 4.698, lng: -74.25, location: 'Parcelas', name: 'Juegos campesinos', time: '9:00 a.m. a 1:00 p.m.', date: '2025-09-27', category: 'arte', img: 'media/marcador.jpg' },
-        { lat: 4.698, lng: -74.25, location: 'Parcelas', name: 'Muestra de danza Adulto Mayor', time: '1:00 p.m. a 3:00 p.m.', date: '2025-09-27', category: 'arte', img: 'media/marcador.jpg' },
-        { lat: 4.7153, lng: -74.223, location: 'Parqueadero Novaterra', name: 'MASTER CLASS actividad física', time: '7:00 a.m. a 7:00 p.m.', date: '2025-09-27', category: 'deporte', img: 'media/marcador.jpg' },
-        { lat: 4.7048, lng: -74.231, location: 'Parque Acuático', name: 'Festival de natación y paranatación', time: '7:00 a.m. a 4:00 p.m.', date: '2025-09-27', category: 'deporte', img: 'media/marcador.jpg' },
-        { lat: 4.7001, lng: -74.241, location: 'Placa deportiva Cartagenita', name: 'Festival Voleibol piso', time: '8:00 a.m. a 5:00 p.m.', date: '2025-09-27', category: 'deporte', img: 'media/marcador.jpg' },
-        { lat: 4.7135, lng: -74.215, location: 'Parque El Trébol', name: 'Festival Voleibol arena', time: '8:00 a.m. a 5:00 p.m.', date: '2025-09-27', category: 'deporte', img: 'media/marcador.jpg' },
-        { lat: 4.719, lng: -74.22, location: 'Parque Ciudad Sabana', name: 'Festival Fútbol', time: '8:00 a.m. a 5:00 p.m.', date: '2025-09-27', category: 'deporte', img: 'media/marcador.jpg' },
-        { lat: 4.70371, lng: -74.23117, location: 'Coliseo Lucio Amórtegui', name: 'Torneo Voleibol Piso 4x4', time: '2:00 p.m. a 8:00 p.m.', date: '2025-09-27', category: 'deporte', img: 'media/marcador.jpg' },
-        { lat: 4.7011, lng: -74.2334, location: 'La Esperanza - Villa Nueva', name: 'Torneo nocturno fútbol de salón', time: '6:00 p.m. a 9:00 p.m.', date: '2025-09-27', category: 'deporte', img: 'media/marcador.jpg' },
+        { lat: 4.71003, lng: -74.22675, location: 'Parque Principal', name: 'Feria Emotion', time: '7:00 a.m. a 5:00 p.m.', date: '2025-09-27', category: 'arte', img: 'img/marcador.jpg' },
+        { lat: 4.71003, lng: -74.22675, location: 'Parque Principal', name: 'CUMPLEAÑOS MOSQUERA', time: '8:00 a.m. a 11:00 a.m.', date: '2025-09-27', category: 'arte', img: 'img/marcador.jpg' },
+        { lat: 4.71003, lng: -74.22675, location: 'Parque Principal', name: 'Zona Beautiful', time: '3:00 p.m. a 6:00 p.m.', date: '2025-09-27', category: 'arte', img: 'img/marcador.jpg' },
+        { lat: 4.71003, lng: -74.22675, location: 'Parque Principal', name: 'CONCIERTO GOSPEL', time: '4:00 p.m. a 12:00 a.m.', date: '2025-09-27', category: 'arte', img: 'img/marcador.jpg' },
+        { lat: 4.7042, lng: -74.2315, location: 'Patinódromo', name: 'Feria de emprendimientos deportivos', time: '7:00 a.m. a 7:00 p.m.', date: '2025-09-27', category: 'arte', img: 'img/marcador.jpg' },
+        { lat: 4.711, lng: -74.228, location: 'Teatro Municipal', name: 'II encuentro de vigías del patrimonio', time: '8:00 a.m. a 5:00 p.m.', date: '2025-09-27', category: 'arte', img: 'img/marcador.jpg' },
+        { lat: 4.721, lng: -74.23, location: 'Los Puentes', name: 'Jornada de siembra', time: '9:00 a.m. a 11:00 a.m.', date: '2025-09-27', category: 'arte', img: 'img/marcador.jpg' },
+        { lat: 4.698, lng: -74.25, location: 'Parcelas', name: 'Juegos campesinos', time: '9:00 a.m. a 1:00 p.m.', date: '2025-09-27', category: 'arte', img: 'img/marcador.jpg' },
+        { lat: 4.698, lng: -74.25, location: 'Parcelas', name: 'Muestra de danza Adulto Mayor', time: '1:00 p.m. a 3:00 p.m.', date: '2025-09-27', category: 'arte', img: 'img/marcador.jpg' },
+        { lat: 4.7153, lng: -74.223, location: 'Parqueadero Novaterra', name: 'MASTER CLASS actividad física', time: '7:00 a.m. a 7:00 p.m.', date: '2025-09-27', category: 'deporte', img: 'img/marcador.jpg' },
+        { lat: 4.7048, lng: -74.231, location: 'Parque Acuático', name: 'Festival de natación y paranatación', time: '7:00 a.m. a 4:00 p.m.', date: '2025-09-27', category: 'deporte', img: 'img/marcador.jpg' },
+        { lat: 4.7001, lng: -74.241, location: 'Placa deportiva Cartagenita', name: 'Festival Voleibol piso', time: '8:00 a.m. a 5:00 p.m.', date: '2025-09-27', category: 'deporte', img: 'img/marcador.jpg' },
+        { lat: 4.7135, lng: -74.215, location: 'Parque El Trébol', name: 'Festival Voleibol arena', time: '8:00 a.m. a 5:00 p.m.', date: '2025-09-27', category: 'deporte', img: 'img/marcador.jpg' },
+        { lat: 4.719, lng: -74.22, location: 'Parque Ciudad Sabana', name: 'Festival Fútbol', time: '8:00 a.m. a 5:00 p.m.', date: '2025-09-27', category: 'deporte', img: 'img/marcador.jpg' },
+        { lat: 4.70371, lng: -74.23117, location: 'Coliseo Lucio Amórtegui', name: 'Torneo Voleibol Piso 4x4', time: '2:00 p.m. a 8:00 p.m.', date: '2025-09-27', category: 'deporte', img: 'img/marcador.jpg' },
+        { lat: 4.7011, lng: -74.2334, location: 'La Esperanza - Villa Nueva', name: 'Torneo nocturno fútbol de salón', time: '6:00 p.m. a 9:00 p.m.', date: '2025-09-27', category: 'deporte', img: 'img/marcador.jpg' },
     ];
 
     let mapInstance;
@@ -90,7 +90,7 @@ document.addEventListener('DOMContentLoaded', function () {
         if (imagesForDate && imagesForDate.length > 0) {
             imagesForDate.forEach(imageName => {
                 const newImage = document.createElement('img');
-                newImage.src = `media/${imageName}`;
+                newImage.src = `img/${imageName}`;
                 newImage.alt = "Cronograma del Evento";
                 newImage.className = 'pre-map-image';
                 preMapImageContainer.appendChild(newImage);
@@ -108,7 +108,7 @@ document.addEventListener('DOMContentLoaded', function () {
         card.className = 'date-card';
         card.dataset.date = dateString;
         card.innerHTML = `
-            <img src="media/FECHA.png" alt="Icono de fecha">
+            <img src="img/FECHA.png" alt="Icono de fecha">
             <p class="date-day">${date.toLocaleString('es-ES', { weekday: 'short', day: 'numeric' })}</p>
             <p class="date-full">${date.toLocaleString('es-ES', { month: 'short' })}</p>
         `;
@@ -127,7 +127,7 @@ document.addEventListener('DOMContentLoaded', function () {
         const card = document.createElement('div');
         card.className = 'date-card nav-card';
         card.innerHTML = `
-            <img src="media/FECHA.png" alt="Icono de navegación">
+            <img src="img/FECHA.png" alt="Icono de navegación">
             <p class="date-day" style="margin-top: 8px;">${text}</p>
         `;
         return card;
